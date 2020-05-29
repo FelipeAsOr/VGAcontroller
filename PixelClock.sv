@@ -19,12 +19,12 @@ initial begin
 end
 
 task CountForPixelClk();
-  if(count == 5) begin
+    if(count == 40) begin //This is to comply with the 60 Hz refresh rate of 640x480 display.
     pxclk = !pxclk;
     count = 0;
   end
   count += 1;
-  $display("The clock is at: %d", pxclk);
+    $display("The clock is at: %d", pxclk); //This can be erased when we are done, it's used for testing.
 endtask : CountForPixelClk
 
 endprogram
