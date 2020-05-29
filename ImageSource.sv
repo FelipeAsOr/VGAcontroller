@@ -29,9 +29,10 @@ module ImageSource(
             blue <= 0;
           end
         end
+      end
       else begin // If it's not to display, go dark
         red <= 0;
-        greeen <= 0;
+        green <= 0;
         blue <= 0;
       end
     end
