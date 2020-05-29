@@ -6,25 +6,25 @@ program PixelClock (
   );
 
 int count = 0;
-int othercount = 0;
+//int othercount = 0;
 
 initial begin
   pxclk = 0;
   forever@(posedge clk) begin
-  CountForPixelClk();
-  othercount += 1;
-  if(othercount == 20)
-    break;
+    CountForPixelClk();
+//  othercount += 1;
+//  if(othercount == 20)
+//    break;
   end
 end
 
 task CountForPixelClk();
-    if(count == 40) begin //This is to comply with the 60 Hz refresh rate of 640x480 display.
+  if(count == 40) begin
     pxclk = !pxclk;
     count = 0;
   end
   count += 1;
-    $display("The clock is at: %d", pxclk); //This can be erased when we are done, it's used for testing.
+  //$display("The clock is at: %d", pxclk);
 endtask : CountForPixelClk
 
 endprogram
