@@ -23,7 +23,7 @@ module ImageSource(
     begin
       if (inDisplayArea) begin
         if(Column < 214) begin
-          if (row < 160) begin
+          if (Row < 160) begin
             red <= 255;
             green <= 0;
             blue <= 0;
